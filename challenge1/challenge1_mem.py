@@ -2,9 +2,6 @@ from sys import argv
 
 n = int(argv[1])
 
-def main():
-    print(countSteps(n))
-
 def countSteps(n, cachedValues = {}):
     if n < 0: 
         return 0
@@ -19,5 +16,4 @@ def countSteps(n, cachedValues = {}):
         # print(cachedValues)
         return cachedValues[n]
 
-if __name__ == "__main__":
-    main()
+print(countSteps(n))
