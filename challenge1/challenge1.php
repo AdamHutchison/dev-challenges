@@ -1,6 +1,6 @@
 <?php
 
-$n = 4;
+$n = $argv[1];
 
 function countSteps($n)
 {
@@ -13,4 +13,4 @@ function countSteps($n)
     }
 }
 
-print_r(countSteps($n));
+echo countSteps($n);
