@@ -2,17 +2,17 @@
 
 $n = $argv[1];
 
-function countSteps($n, $cachedValues = [])
+function countSteps($n, &$cache = [])
 {
     if ($n < 0) {
         return 0;
     } elseif ($n == 0) {
         return 1;
-    } elseif(array_key_exists($n, $cachedValues)) {
-        return $cachedValues[$n];
+    } elseif(array_key_exists($n, $cache)) {
+        return $cache[$n];
     } else {
-        $cachedValues[$n] = countSteps($n - 1, $cachedValues) + countSteps($n - 2, $cachedValues) + countSteps($n - 3, $cachedValues);
-        return $cachedValues[$n];
+        $cache[$n] = countSteps($n - 1, $cache) + countSteps($n - 2, $cache) + countSteps($n - 3, $cache);
+        return $cache[$n];
     }
 }
 
