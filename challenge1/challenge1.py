@@ -9,5 +9,5 @@ def countSteps(n):
         return 1
     else:
         return countSteps(n-1) + countSteps(n-2) + countSteps(n-3)
-
+        
 print(countSteps(n))
