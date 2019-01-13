@@ -41,8 +41,6 @@ class Dequeue:
             elif self._uppercase_list.get(item):
                 self.add_rear(self._uppercase_list.get(item))
 
-        print (self._items)
-
     def add_front(self, item):
         self._items.insert(0, item)
 
