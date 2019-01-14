@@ -4,11 +4,8 @@ class Dequeue:
     def __init__(self):
         self._items = []
 
-    def _sanitise_string(self, string):
-        return re.sub("[^a-zA-Z]","", string).lower()
-    
     def set_items(self, string):
-        self._items = list(self._sanitise_string(string))
+        self._items = list(string)
 
     def add_front(self, item):
         self._items.insert(0, item)

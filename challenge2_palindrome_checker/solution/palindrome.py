@@ -1,11 +1,14 @@
 from sys import argv
 from dequeue import Dequeue
+import re
 
 potential_palindrome = argv[1]
 
 def check_palindrome(string_to_check):
+    sanitised_string = re.sub("[^a-zA-Z]","", string_to_check).lower()
+    
     dq = Dequeue()
-    dq.set_items(string_to_check)
+    dq.set_items(sanitised_string)
 
     is_palindrome = True
 
