@@ -11,8 +11,15 @@ class Dequeue
 
     public function setItems($string)
     {
-        $sanitisedString = preg_replace('/[^a-z]/i','',$string);
-        $this->items = str_split(strtolower($sanitisedString));
+        $items = str_split(strtolower($string));
+        foreach ($items as $item) {
+            if (array_has(range(ord('a'), ord('z') + 1), ord($item))) {
+                $this->addRear($item);
+            } elseif (array_has(range(ord('A'), ord('Z') + 1), ord($item))) {
+                # difference between upper case and lowercase ascii valies is +32
+                $this->addRear(chr(ord($item) + 32));
+            }
+        }
     }
 
     public function addFront($item)
