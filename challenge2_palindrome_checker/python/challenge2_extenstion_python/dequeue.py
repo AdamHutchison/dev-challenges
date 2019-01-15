@@ -6,10 +6,13 @@ class Dequeue:
 
     def set_items(self, string):
         items = list(string)
+        lowercase_ascii_values = range(ord('a'), ord('z') + 1)
+        uppercase_ascii_values = range(ord('A'), ord('Z') + 1)
+        
         for item in items:
-            if ord(item) in range(ord('a'), ord('z') + 1):
+            if ord(item) in lowercase_ascii_values:
                 self.add_rear(item)
-            elif ord(item) in range(ord('A'), ord('Z') + 1): 
+            elif ord(item) in uppercase_ascii_values: 
                 # difference between upper case and lowercase ascii valies is +32
                 self.add_rear(chr(ord(item) + 32))
 
