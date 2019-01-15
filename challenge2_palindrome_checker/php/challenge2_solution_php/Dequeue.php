@@ -13,7 +13,6 @@ class Dequeue
     {
         $sanitisedString = preg_replace('/[^a-z]/i','',$string);
         $this->items = str_split(strtolower($sanitisedString));
-        print_r($this->items);
     }
 
     public function addFront($item)
