@@ -11,18 +11,12 @@ class Dequeue
 
     public function setItems($string)
     {
-        $items = str_split(strtolower($string));
-
-        // create an array containing lowercase letter ascii values
-        $lowercaseAsciiValues = range(ord('a'), ord('z') + 1);
-
-        // create an array containing uppercase letter ascii values
-        $uppercaseAsciiValues = range(ord('A'), ord('Z') + 1);
+        $items = str_split($string);
 
         foreach ($items as $item) {
-            if (in_array(ord($item), $lowercaseAsciiValues)) {
+            if (ord($item) >= 97 and ord($item) <= 122) {
                 $this->addRear($item);
-            } elseif (in_array(ord($item), $uppercaseAsciiValues)) {
+            } elseif (ord($item) >= 65 and ord($item) <= 90) {
                 // difference between upper case and lowercase ascii valies is +32
                 $this->addRear(chr(ord($item) + 32));
             }
