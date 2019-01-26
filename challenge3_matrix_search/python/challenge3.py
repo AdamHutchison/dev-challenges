@@ -12,15 +12,12 @@ matrix = [
 ]
 
 def matrix_search(element):
-    row = 0
-    while row <= len(matrix) -1:
+    for row in range(len(matrix)):
         search = BinarySearcher(matrix[row])
         value = search.find_element(element)
         if(value != 'Not Found'):
             return [row, value]
-        
-        row += 1
-    
+
     return "Not Found"
 
 print(matrix_search(element))
