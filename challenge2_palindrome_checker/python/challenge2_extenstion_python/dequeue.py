@@ -1,4 +1,5 @@
 import string
+import re
 
 class Dequeue:
     def __init__(self):
@@ -10,7 +11,7 @@ class Dequeue:
         for item in items:
             if ord(item) >= 97 and ord(item) <= 122:
                 self.add_rear(item)
-            elif ord(item) >= 65 and ord(item) <= 90:
+            if ord(item) >= 65 and ord(item) <= 90:
                 self.add_rear(chr(ord(item)+32))
 
     def add_front(self, item):
