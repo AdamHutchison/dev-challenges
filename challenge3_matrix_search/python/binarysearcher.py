@@ -15,8 +15,6 @@ class BinarySearcher:
             elif(element > self.values[self.midpoint]):
                 self.adjust_lower()
         
-        return "Not Found"
-    
     def adjust_upper(self):
         self.upper = self.midpoint - 1
 
